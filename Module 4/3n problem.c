@@ -1,11 +1,11 @@
 #include<stdio.h>
 int main()
 {
-    int n;
-    printf("Enter a number :");
-    scanf("%d",&n);
+    long long  n;
+   // printf("Enter a number :");
+    scanf("%lld",&n);
     while (n>1) {
-      printf("------->%d\n",n);
+      printf("%lld ",n);
      if(n%2==0){
        n= n/2;
      }
@@ -16,5 +16,6 @@ int main()
 
       
     }
-    printf("------->%d",n);
+    printf("%lld",n);
 }
+
