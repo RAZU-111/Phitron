@@ -3,14 +3,14 @@ int main(){
     int n,x;
     int arr[20000];
     scanf("%d",&n);
-
-    for(int i=1;i<n;i++){
+    
+    for(int i=1;i<=n;i++){
         scanf("%d",&x);
         arr[x]=1;
     }
     for(int i=1;i<=n;i++){
         if(arr[i]==0){
-        printf("%d",i);
+        printf("Mising Number is : %d",i);
         break;
         }
         

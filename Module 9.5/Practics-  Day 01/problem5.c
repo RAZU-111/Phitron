@@ -23,7 +23,7 @@ int main()
     if(count == 0)
        printf("NO");
      else
-         printf("YES");
+       printf("YES");
     
      
     return 0;
