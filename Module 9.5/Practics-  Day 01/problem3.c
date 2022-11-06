@@ -7,16 +7,17 @@ int main()
     for(int i=0;i<n;i++){
         scanf("%d",&arr[i]);
     }
-    for(int i=0;i<n;i++){
-      
-      if(arr[i]==arr[i+1]){
+    for(int i=0;i<n-1;i++){
+     if(arr[i]!=arr[i+1]){
         count++;
-      }
-    }
+        
+     }  
+  }
+  
     if(count == 0)
-        printf("NO");
+        printf("YES");
     else
-         printf("YES");
+         printf("NO");
     
     return 0;
 }
