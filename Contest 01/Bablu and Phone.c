@@ -6,8 +6,8 @@ int main()
     while (t--)
     {
         int x, a, b,c;
-        char d;
-        scanf("%d%c", &x, &d);
+        char ch;
+        scanf("%d%c", &x, &ch);
         if (x >= 0 && x < 60)
         {
             a = 60 - x;
