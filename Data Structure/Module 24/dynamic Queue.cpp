@@ -100,9 +100,9 @@ int main()
 {
     Queue q;
     q.enqueue(5);
-    q.enqueue(5);
-    q.enqueue(5);
-    q.enqueue(5);
+    q.enqueue(15);
+    q.enqueue(25);
+    q.enqueue(35);
 
     cout <<"Size : "<< q.getsize() << endl;
     cout << q.front() << endl;
