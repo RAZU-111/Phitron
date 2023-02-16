@@ -7,7 +7,7 @@ int main()
     cin >> n;
     queue<string> q;
     q.push("1");
-    for (int i = 1; i <= n; i++)
+    for (int i = 1; i <=  n; i++)
     {
         cout << "Binary Representation of " << i << ": " << q.front() << endl;
         string temp = q.front();
