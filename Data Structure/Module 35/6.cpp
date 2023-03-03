@@ -1,37 +1,37 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    deque<int> a;
+    deque<int> d;
     vector<int> num;
     int n;
-    cin>>n;
-    for(int i=0; i<n; i++)
+    cin >> n;
+    for (int i = 0; i < n; i++)
     {
-        int o;
-        cin>>o;
-        a.push_front(o);
+        int x;
+        cin >> x;
+        d.push_front(x);
     }
-    cout<<"the  sorted deque is\n";
-    while(!a.empty())
+    cout << "The  sorted deque is"
+         << "\n";
+    while (!d.empty())
     {
-        if(a.front()<= a.back())
+        if (d.front() <= d.back())
         {
-            num.push_back(a.front());
-            a.pop_front();
+            num.push_back(d.front());
+            d.pop_front();
         }
         else
         {
-            num.push_back(a.back());
-            a.pop_back();
-
+            num.push_back(d.back());
+            d.pop_back();
         }
     }
-    for(int i=0; i<num.size(); i++)
+    for (int i = 0; i < num.size(); i++)
     {
-        a.push_back(num[i]);
+        d.push_back(num[i]);
     }
-    for (auto it = a.begin(); it != a.end(); it++)
+    for (auto it = d.begin(); it != d.end(); it++)
     {
         cout << *it << " ";
     }

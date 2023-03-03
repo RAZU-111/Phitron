@@ -18,11 +18,11 @@ public:
     }
     node* CreateNewNode(int value)
     {
-        node* NewNode = new node;
-        NewNode->value = value;
-        NewNode->Left = NULL;
-        NewNode->Right = NULL;
-        return NewNode;
+        node* newNode = new node;
+        newNode->value = value;
+        newNode->Left = NULL;
+        newNode->Right = NULL;
+        return newNode;
     }
     void Insert(int value)
     {
@@ -83,16 +83,16 @@ public:
 };
 int main()
 {
-    BST bst;
-    bst.Insert(10);
-    bst.Insert(20);
-    bst.Insert(25);
-    bst.Insert(50);
-    bst.Insert(8);
-    bst.Insert(9);
-    cout<<bst.Search(10)<<"\n"; //1
-    cout<<bst.Search(9)<<"\n"; //1
-    cout<<bst.Search(20)<<"\n"; //1
-    cout<<bst.Search(60)<<"\n"; //0
+    BST b;
+    b.Insert(5);
+    b.Insert(10);
+    b.Insert(15);
+    b.Insert(20);
+    b.Insert(30);
+    b.Insert(40);
+    cout<<b.Search(10)<<"\n"; 
+    cout<<b.Search(15)<<"\n"; 
+    cout<<b.Search(20)<<"\n"; 
+    cout<<b.Search(60)<<"\n"; 
     return 0;
 }

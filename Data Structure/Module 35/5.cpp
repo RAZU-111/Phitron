@@ -7,22 +7,22 @@ class Queue
 {
 public:
     int arr[MAX_SIZE];
-    int frontIndex, rearIndex;
+    int frontIndex, backIndex;
 public:
     Queue()
     {
         frontIndex = -1;
-        rearIndex = -1;
+        backIndex = -1;
     }
 
     bool isFull()
     {
-        return rearIndex == MAX_SIZE - 1;
+        return backIndex == MAX_SIZE - 1;
     }
 
     bool isEmpty()
     {
-        return frontIndex == -1 || frontIndex > rearIndex;
+        return frontIndex == -1 || frontIndex > backIndex;
     }
 
     void enqueue(int value)
@@ -36,8 +36,8 @@ public:
         {
             frontIndex = 0;
         }
-        rearIndex++;
-        arr[rearIndex] = value;
+        backIndex++;
+        arr[backIndex] = value;
     }
 
     int dequeue()
@@ -67,29 +67,28 @@ int main()
 {
     Queue q;
 
-    q.enqueue(1);
-    q.enqueue(2);
-    q.enqueue(3);
-    cout << "Front: " << q.front() << endl;
-    cout << "Dequeue: " << q.dequeue() << endl;
-    cout << "Front: " << q.front() << endl;
-    cout << endl;
-
     q.enqueue(4);
     q.enqueue(5);
     q.enqueue(6);
-    q.enqueue(7);
-    q.enqueue(8);
-    q.enqueue(9);
+    cout << "Front   : " << q.front() << endl;
+    cout << "Dequeue : " << q.dequeue() << endl;
+    cout << "Front   : " << q.front() << endl;
+    cout << endl;
+
+    q.enqueue(30);
+    q.enqueue(50);
+    q.enqueue(60);
+    q.enqueue(70);
+    q.enqueue(40);
+    q.enqueue(80);
     q.enqueue(10);
-    //when queue is full
-    q.enqueue(11);
+    q.enqueue(10);
     cout << endl;
 
 
-    cout << "Dequeue: " << q.dequeue() << endl;
-    cout << "Dequeue: " << q.dequeue() << endl;
-    cout << "Front: " << q.front() << endl;
+    cout << "Dequeue : " << q.dequeue() << endl;
+    cout << "Dequeue : " << q.dequeue() << endl;
+    cout << "Front   : " << q.front() << endl;
 
     return 0;
 }

@@ -2,144 +2,123 @@
 
 using namespace std;
 
-
-class maxHeap{
+class maxHeap
+{
 
 public:
-
     vector<int> node;
 
-    maxHeap(){
-
-
+    maxHeap()
+    {
     }
 
+    void upHeapify(int index)
+    {
 
-    // Up Heapify oparetion O(log n)
+        while (index > 0 && node[index] > node[(index - 1) / 2])
+        {
 
-    void upHeapify(int index){
+            swap(node[index], node[(index - 1) / 2]);
 
-        while (index > 0 && node[index] > node[(index-1)/2] ){
-
-            swap(node[index] , node[(index-1)/2]);
-
-            index = (index-1)/2;
-
+            index = (index - 1) / 2;
         }
-
-       
-
     }
 
-    // Down Heapify O(lo n)
+    void downHeapify(int index)
+    {
 
-    void downHeapify(int index){
-
-        while (1){
+        while (1)
+        {
 
             int largest = index;
 
-            int left = 2*index+1;
+            int left = 2 * index + 1;
 
-            int right = 2*index+2;
+            int right = 2 * index + 2;
 
-            if(left < node.size() && node[largest] < node[left]) largest = left;
+            if (left < node.size() && node[largest] < node[left])
+                largest = left;
 
-           
+            if (right < node.size() && node[largest] < node[right])
+                largest = right;
 
-            if(right < node.size() && node[largest] < node[right]) largest = right;  
+            if (largest == index)
+                break;
 
-
-            if(largest == index) break;
-
-            swap(node[index] , node[largest]);
+            swap(node[index], node[largest]);
 
             index = largest;
-
         }
-
-       
-
     }
 
+  
 
-    //Inser value on heap O(1)
-
-    void insertHeap(int x){
+    void insertHeap(int x)
+    {
 
         node.push_back(x);
 
-        upHeapify(node.size()-1);
-
+        upHeapify(node.size() - 1);
     }
 
+    
 
-    // Print the heap O(1)
+    void printMaxHeap()
+    {
 
-    void printMaxHeap(){
+        for (int i = 0; i < node.size(); i++)
+        {
 
-        for (int i = 0; i< node.size(); i++){
-
-            cout << node[i]*-1 << "  ";
-
+            cout << node[i] * -1 << "  ";
         }
 
         cout << endl;
-
     }
 
-    //  delete index from heap O(1)
+    void deleteHeap(int index)
+    {
 
-    void deleteHeap(int index){
+        if (index >= node.size())
+        {
 
-        if(index >= node.size()){
-
-            cout << " ERROR Heap is empty \n";
+            cout << "Heap is Empty \n";
 
             return;
-
         }
 
-        swap(node[index], node[node.size()-1]);
+        swap(node[index], node[node.size() - 1]);
 
         node.pop_back();
 
         downHeapify(index);
-
     }
 
-    // max elemen on heap O(1)
+    int getMax()
+    {
 
-    int getMax(){
+        if (node.empty())
+        {
 
-        if(node.empty()){
-
-            cout << " ERROR Heap is empty \n";
+            cout << " Heap is empty " << endl;
 
             return -1;
-
         }
 
         return node[0];
-
     }
-
 };
 
-
-
-class MinHeap{
+class MinHeap
+{
 
 public:
-
     maxHeap mx;
 
     void insert(int x)
 
     {
 
-            mx.insertHeap(-x);
-
+        mx.insertHeap(-x);
     }
 
     void Delete(int idx)
@@ -147,7 +126,6 @@ public:
     {
 
         mx.deleteHeap(idx);
-
     }
 
     int getMin()
@@ -157,48 +135,42 @@ public:
         int min = mx.getMax();
 
         return -min;
-
     }
 
-    void printtree(){
+    void printTree()
+    {
 
         mx.printMaxHeap();
-
     }
-
 };
 
+int main()
+{
 
+    MinHeap mh;
 
+    mh.insert(50);
 
-int main(){
+    mh.insert(70);
 
+    mh.insert(90);
 
-    MinHeap h;
+    mh.insert(30);
 
-    h.insert(4);
+    mh.insert(10);
 
-    h.insert(7);
+    mh.insert(20);
 
-    h.insert(9);
+    mh.insert(30);
 
-    h.insert(1);
+    mh.printTree();
 
-    h.insert(10);
+    mh.Delete(0);
+    mh.Delete(1);
 
-    h.insert(20);
+    mh.printTree();
 
-    h.insert(30);
-
-    h.printtree();
-
-    h.Delete(0);
-
-    h.printtree();
-
-    cout << "Min element " << h.getMin() << endl;
-
+    cout << "Min Element " << mh.getMin() << endl;
 
     return 0;
-
 }

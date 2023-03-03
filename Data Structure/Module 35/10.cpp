@@ -1,37 +1,38 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
     int n;
-    cin>>n;
-    vector<int>a(n);
-    for(int i=0;i<n;i++)
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++)
     {
-        cin>>a[i];
+        cin >> a[i];
     }
 
     int m;
-    cin>>m;
-    vector<int>b(m);
-    for(int i=0;i<m;i++)
+    cin >> m;
+    vector<int> b(m);
+    for (int i = 0; i < m; i++)
     {
-        cin>>b[i];
+        cin >> b[i];
     }
 
-    set<int>st;
+    set<int> s;
 
-    for(auto it:a)
+    for (auto it : a)
     {
-       st.insert(it);
+        s.insert(it);
     }
-    for(auto it:b)
+    for (auto it : b)
     {
-       st.insert(it);
+        s.insert(it);
     }
-    cout<<"\n";
-    for(auto it:st)
+    cout <<endl;
+    for (auto it : s)
     {
-       cout<<it<<" ";
+        cout << it << " ";
     }
 
+    return 0;
 }

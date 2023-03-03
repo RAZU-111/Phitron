@@ -106,7 +106,7 @@ public:
         }
         cout<<"\n";
     }
-    int getsize()
+    int getSize()
     {
         return sz;
     }
@@ -121,12 +121,12 @@ int main()
     dl.InsertAtHead(5);
     dl.InsertAtHead(2);
     dl.Traverse();
-    cout<<dl.getsize()<<"\n";
+    cout<<dl.getSize()<<"\n";
     dl.insertTail(10);
     dl.Traverse();
-    cout<<dl.getsize()<<"\n";
+    cout<<dl.getSize()<<"\n";
     dl.insertMid(9);
     dl.Traverse();
-    cout<<dl.getsize()<<"\n";
+    cout<<dl.getSize()<<"\n";
     return 0;
 }
