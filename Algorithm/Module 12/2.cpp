@@ -4,7 +4,7 @@ const int N = 1005;
 vector<int> adj_list[N];
 int level[N];
 bool visited[N];
-void level_counter(int src)
+void bfs(int src)
 {
     visited[src] = true;
     level[src] = 0;
@@ -28,23 +28,23 @@ void level_counter(int src)
 int main()
 {
     int nodes;
-    int edge;
-    cout << "Enter the number of vertex :";
+    int edges;
+    cout << "Enter the number of nodes :";
     cin >> nodes;
-    cout << "Enter the number of edge :";
-    cin >> edge;
-    cout << "Enter all the  edges>>\n";
-    for (int i = 0; i < edge; i++)
+    cout << "Enter the number of edges :";
+    cin >> edges;
+    cout << "Enter all the  edges blewo :";
+    for (int i = 0; i < edges; i++)
     {
         int u, v;
         cin >> u >> v;
         adj_list[u].push_back(v);
         adj_list[v].push_back(u);
     }
-    level_counter(0);
+    bfs(0);
     for (int i = 0; i < nodes; i++)
     {
-        cout<<"node " << i << " -> level:" << level[i] << "\n";
+        cout << "node " << i << " -> level:" << level[i] << "\n";
     }
     return 0;
 }
