@@ -22,7 +22,7 @@ class Circle(Shape):
     
 
 
-choturvuj = Rectriangle('rec',10,20)
+choturvuj = Rectriangle('rectriangl',10,20)
 
 print(choturvuj.area())
 
