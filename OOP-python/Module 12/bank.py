@@ -17,8 +17,8 @@ class Bank:
         self.ac_no += random
         return self.ac_no
         
-    def total_balace(self):
-        return self.total_balace
+    def total_balance(self):
+        return self.total_balance
     
     
 
