@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel ="stylesheet" href="{%static 'css/first.css'%}"/link>
+</head>
+<body>
+    <h1>This is inside app </h1>
+    <h1>Author name : {{author}}</h1>
+   <!-- {% if age >=  18    %}
+    <p> You are adult </p>
+   
+    {% elif age < 18   %}
+    <p> You are Not adult </p>
+    {% else %} 
+    <p> You are shisu </p>
+    {% endif %}  -->
+    <!-- <table border="1" width = 500>
+    <tr>
+     <th>ID</th>
+     <th>Courses</th>
+     <th>Teacher</th>
+    </tr>
+     
+        {%for i in courses%}
+        <tr>
+        <td>{{i.id}}</td>
+        <td>{{i.course}}</td>
+        <td>{{i.teacher}}</td>
+        </tr>
+        {%endfor%}
+     
+    </table> -->
+    <img src="{%static 'images/img1.jpg'%}" alt="Natuer image" />
+</body>
+</html>
