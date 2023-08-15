@@ -11,9 +11,12 @@ class StudentForm(forms.ModelForm):
            
        }
        widgets = {
-           'name' : forms.TextInput(attrs={'class' : 'btn-primary'}),
+           'name' : forms.TextInput(),
            'roll' : forms.TextInput()
        }
        error_messages = {
            'name' :{'required':'You Must have to Name'}
        }
+       
+
+
